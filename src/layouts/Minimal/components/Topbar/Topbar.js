@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { AppBar, Toolbar } from '@material-ui/core';
 
+import logo from '../../../../assets/images/logos/logo--white.png';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -30,7 +31,7 @@ const Topbar = props => {
           style={{width: 100,
               height: 40}}
             alt="Logo"
-            src="/images/logos/logo--white.png"
+            src={logo}
           />
 
         </RouterLink>

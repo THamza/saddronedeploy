@@ -22,6 +22,11 @@ const Routes = () => {
     <Switch>
       <Redirect
         exact
+        from="/saddronedeploy"
+        to="/dashboard"
+      />
+      <Redirect
+        exact
         from="/"
         to="/dashboard"
       />

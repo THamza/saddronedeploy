@@ -1,5 +1,5 @@
 import uuid from 'uuid/v1';
-
+import ksImg from '../../assets/images/avatars/avatar_11.png';
 export default [
   {
     id: uuid(),
@@ -12,7 +12,7 @@ export default [
     },
     email: 'ekaterina.tankova@devias.io',
     phone: '304-428-3097',
-    avatarUrl: '/images/avatars/avatar_11.png',
+    avatarUrl: {ksImg},
     createdAt: 1555016400000
   },
   {

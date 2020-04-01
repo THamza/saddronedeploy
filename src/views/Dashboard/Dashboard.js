@@ -39,7 +39,7 @@ const Dashboard = () => {
           lg={3}
           sm={3}
           xl={3}
-          xs={12}
+          xs={6}
         >
           <NumberOfManagerDrones />
         </Grid>
@@ -48,7 +48,7 @@ const Dashboard = () => {
           lg={3}
           sm={3}
           xl={3}
-          xs={12}
+          xs={6}
         >
           <TotalFlightTime />
         </Grid>
@@ -58,7 +58,7 @@ const Dashboard = () => {
           lg={3}
           sm={3}
           xl={3}
-          xs={12}
+          xs={6}
         >
           <NumberOfWorkingDrones />
         </Grid>
@@ -67,52 +67,52 @@ const Dashboard = () => {
           lg={3}
           sm={3}
           xl={3}
-          xs={12}
+          xs={6}
         >
           <TotalAreaCovered />
         </Grid>
         <Grid
           item
-          lg={3}
+          lg={6}
           sm={6}
-          xl={3}
-          xs={12}
+          xl={6}
+          xs={6}
         >
           <AverageManagerDroneState />
         </Grid>
         <Grid
           item
-          lg={3}
+          lg={6}
           sm={6}
-          xl={3}
-          xs={12}
+          xl={6}
+          xs={6}
         >
           <AverageWorkerDroneState />
         </Grid>
         <Grid
           item
-          lg={8}
+          lg={12}
           md={12}
-          xl={9}
+          xl={12}
           xs={12}
         >
           <CurrentTaskProgress />
         </Grid>
         <Grid
           item
-          lg={8}
+          lg={6}
           md={6}
-          xl={9}
-          xs={12}
+          xl={6}
+          xs={6}
         >
           <UsersByDevice />
           </Grid>
         <Grid
           item
-          lg={8}
+          lg={6}
           md={6}
-          xl={9}
-          xs={12}
+          xl={6}
+          xs={6}
         >
           <ConnectionTraffic />
         </Grid>
@@ -123,38 +123,38 @@ const Dashboard = () => {
 
         <Grid
           item
-          lg={3}
+          lg={4}
           sm={4}
-          xl={3}
-          xs={12}
+          xl={4}
+          xs={4}
         >
           <NumberOfMissions />
         </Grid>
 
         <Grid
           item
-          lg={3}
+          lg={4}
           sm={4}
-          xl={3}
-          xs={12}
+          xl={4}
+          xs={4}
         >
           <AverageDronesNeeded />
         </Grid>
         <Grid
           item
-          lg={3}
+          lg={4}
           sm={4}
-          xl={3}
-          xs={12}
+          xl={4}
+          xs={4}
         >
           <AverageTimeNeeded />
         </Grid>
 
         <Grid
           item
-          lg={8}
-          md={12  }
-          xl={9}
+          lg={12}
+          md={12}
+          xl={12}
           xs={12}
         >
           <TimeNeededPerMission />
@@ -162,9 +162,9 @@ const Dashboard = () => {
 
         <Grid
           item
-          lg={4}
+          lg={12}
           md={12}
-          xl={3}
+          xl={12}
           xs={12}
         >
           <LatestMissions />

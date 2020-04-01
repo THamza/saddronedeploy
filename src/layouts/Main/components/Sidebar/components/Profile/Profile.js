@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Avatar, Typography } from '@material-ui/core';
 
+import userImg from '../../../../../../assets/images/avatars/avatar_11.png';
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -28,7 +30,7 @@ const Profile = props => {
 
   const user = {
     name: 'Dr.Smith Kevin',
-    avatar: '/images/avatars/avatar_11.png',
+    avatar: '../../../../../../assets/images/avatars/avatar_11.png',
     bio: 'Controller'
   };
 
@@ -41,7 +43,7 @@ const Profile = props => {
         alt="Person"
         className={classes.avatar}
         component={RouterLink}
-        src={user.avatar}
+        src={userImg}
         to="/settings"
       />
       <Typography

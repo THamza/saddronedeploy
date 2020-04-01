@@ -14,6 +14,8 @@ import {
   LinearProgress
 } from '@material-ui/core';
 
+import userImg from '../../../../assets/images/avatars/avatar_11.png'
+
 const useStyles = makeStyles(theme => ({
   root: {},
   details: {
@@ -44,7 +46,7 @@ const AccountProfile = props => {
     city: 'Ifrane',
     country: 'Morocco',
     timezone: 'GTM+1',
-    avatar: '/images/avatars/avatar_11.png'
+    avatar: {userImg}
   };
 
   return (
@@ -78,7 +80,7 @@ const AccountProfile = props => {
           </div>
           <Avatar
             className={classes.avatar}
-            src={user.avatar}
+            src={userImg}
           />
         </div>
         <div className={classes.progress}>

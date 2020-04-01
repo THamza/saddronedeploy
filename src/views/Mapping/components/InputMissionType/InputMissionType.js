@@ -10,6 +10,8 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { Button } from '@material-ui/core';
 
+import { SnackbarProvider, useSnackbar } from 'notistack';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -65,6 +67,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
+let missionChoice = 0;
 const options = [
   'Choose a job',
   'Collect Fauna Data',
@@ -75,8 +78,82 @@ const options = [
   'Map Ocean Floor'
 ];
 
-let missionChoice = 0;
+function Snack() {
+
+  const classes = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleClick0 = (variant, msg) => () => {
+    // variant could be success, error, warning, info, or default
+          enqueueSnackbar(msg,  {variant});
+    }
+  const handleClick1 = () => () => {
+    // variant could be success, error, warning, info, or default
+          enqueueSnackbar("Checking Available Manager Drones...",  {variant: "success"});
+          setTimeout(() => {
+              enqueueSnackbar("Manager D.: Detecting fauna in the area...",  {variant: "info"});
+              setTimeout(() => {
+                  enqueueSnackbar("Manager D.: Deploying Worker Drones...",  {variant: "success"});
+                  setTimeout(() => {
+                      enqueueSnackbar("Worker D.: Processing...",  {variant: "info"});
+                      setTimeout(() => {
+                          enqueueSnackbar("Manager D.: Merging Collected Data...",  {variant: "info"});
+                          setTimeout(() => {
+                              enqueueSnackbar("Task Completed Successfully",  {variant: "success"});
+                          }, 3000);
+                      }, 7000);
+                  }, 5000);
+              }, 4000);
+          }, 4000);
+    }
+
+  const handleClick4 = () => () => {
+    // variant could be success, error, warning, info, or default
+        enqueueSnackbar("Estimating Weather Conditions...", {variant: "info"});
+          setTimeout(() => {
+              enqueueSnackbar("Dangerous Flight Conditions Detected", {variant: "warning"});
+              setTimeout(() => {
+                  enqueueSnackbar("Task Cancelled!", {variant: "error"});
+                  setTimeout(() => {
+                      enqueueSnackbar("Task Enqueued for Rescheduling", {variant: "info"});
+                  }, 3000);
+              }, 2000);
+          }, 5000);
+    }
+  const handleClick6 = (variant, message) => () => {
+    // variant could be success, error, warning, info, or default
+          enqueueSnackbar(message,  {variant});
+    }
+
+    function BRender(props) {
+      if (missionChoice === 0) {
+        return <Button Disabled onClick={handleClick0("info", "Please Delimit a Location and Choose a Task")
+        }>Submit</Button>
+      }
+      else if (missionChoice === 1) {
+        return <Button className={clsx(classes.submitButtonEnabled)} onClick={handleClick1()}>Submit</Button>
+      }
+      else if (missionChoice === 4) {
+        return <Button className={clsx(classes.submitButtonEnabled)} onClick={handleClick4()}>Submit</Button>
+      }
+      else if (missionChoice === 6) {
+        return <Button className={clsx(classes.submitButtonDisabled)} onClick={handleClick6("error", "No Aquatic Drones Found")
+        }>Submit</Button>
+      }
+      return <div></div>
+    }
+
+  return (
+    <React.Fragment>
+    <BRender />
+    </React.Fragment>
+  );
+}
+
+
+
 const InputMissionType = props => {
+
   const { className, ...rest } = props;
 
   const classes = useStyles();
@@ -84,6 +161,7 @@ const InputMissionType = props => {
    const [selectedIndex, setSelectedIndex] = React.useState(1);
 
    const handleClickListItem = (event) => {
+
      setAnchorEl(event.currentTarget);
      missionChoice = event.currentTarget;
    };
@@ -155,26 +233,12 @@ const InputMissionType = props => {
                                     ))}
                                   </Menu>
                                 </div>
-                                <Button variant="contained" className={clsx(classes.submitButtonEnabled, className)} onClick={() => {
-                                    switch(missionChoice){
-                                      case 1:
-                                        break
-                                      case 2:
-                                        break
-                                      case 3:
-                                        break
-                                      case 4:
-                                        break
-                                      case 5:
-                                        break
-                                      case 6:
-                                        break
-                                      default:
 
-                                    }
-                                  }}>
-                                    Submit
-                                  </Button>
+                                  <SnackbarProvider maxSnack={10}>
+                                   <React.Fragment>
+                                    <Snack/>
+                                      </React.Fragment>
+                                  </SnackbarProvider>
 
                 </Grid>
           </Grid>

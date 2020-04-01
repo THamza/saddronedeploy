@@ -7,6 +7,7 @@ import { AppBar, Toolbar, Badge, Hidden, IconButton } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/NotificationsOutlined';
 import InputIcon from '@material-ui/icons/Input';
+import logo from '../../../../assets/images/logos/logo--white.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -47,7 +48,7 @@ const Topbar = props => {
             style={{width: 100,
                 height: 40,}}
             alt="Logo"
-            src="/images/logos/logo--white.png"
+            src={logo}
           />
 
         </RouterLink>

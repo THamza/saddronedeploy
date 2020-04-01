@@ -11,6 +11,8 @@ import {
   Weather
 } from './components';
 
+
+
 const useStyles = makeStyles(theme => ({
   root: {
     padding: theme.spacing(4)
@@ -36,7 +38,7 @@ const Mapping = () => {
           item
           lg={8}
           md={8}
-          xl={9}
+          xl={8}
           xs={12}
         >
           <MyMap />
@@ -44,9 +46,9 @@ const Mapping = () => {
 
         <Grid
           item
-          lg={8}
+          lg={4}
           md={4}
-          xl={9}
+          xl={4}
           xs={12}
         >
           <InputMissionType />
@@ -60,20 +62,20 @@ const Mapping = () => {
           >
             <Grid
               item
-              lg={8}
+              lg={6}
               md={6}
-              xl={9}
-              xs={12}
+              xl={6}
+              xs={6}
             >
               <EstimatedManagerDronesNeeded />
             </Grid>
 
             <Grid
               item
-              lg={8}
+              lg={6}
               md={6}
-              xl={9}
-              xs={12}
+              xl={6}
+              xs={6}
             >
               <EstimatedWorkerDronesNeeded />
             </Grid>
@@ -82,9 +84,9 @@ const Mapping = () => {
 
           <Grid
             item
-            lg={8}
+            lg={12}
             md={12}
-            xl={9}
+            xl={12}
             xs={12}
           >
             <EstimatedTimeDronesNeeded />
