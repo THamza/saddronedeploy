@@ -73,8 +73,6 @@ const options = [
   'Collect Fauna Data',
   'Collect Flora Data',
   'Collect Geological Data',
-  'Collect Atmospheric Data',
-  'Get Picture of the Area',
   'Map Ocean Floor'
 ];
 
@@ -87,27 +85,75 @@ function Snack() {
     // variant could be success, error, warning, info, or default
           enqueueSnackbar(msg,  {variant});
     }
-  const handleClick1 = () => () => {
-    // variant could be success, error, warning, info, or default
-          enqueueSnackbar("Checking Available Manager Drones...",  {variant: "success"});
-          setTimeout(() => {
-              enqueueSnackbar("Manager D.: Detecting fauna in the area...",  {variant: "info"});
-              setTimeout(() => {
-                  enqueueSnackbar("Manager D.: Deploying Worker Drones...",  {variant: "success"});
-                  setTimeout(() => {
-                      enqueueSnackbar("Worker D.: Processing...",  {variant: "info"});
-                      setTimeout(() => {
-                          enqueueSnackbar("Manager D.: Merging Collected Data...",  {variant: "info"});
-                          setTimeout(() => {
-                              enqueueSnackbar("Task Completed Successfully",  {variant: "success"});
-                          }, 3000);
-                      }, 7000);
-                  }, 5000);
-              }, 4000);
-          }, 4000);
-    }
+    const handleClick1 = () => () => {
+      // variant could be success, error, warning, info, or default
+            enqueueSnackbar("Checking Available Manager Drones...",  {variant: "success"});
+            setTimeout(() => {
+                enqueueSnackbar("Manager D.: Detecting fauna in the area...",  {variant: "info"});
+                setTimeout(() => {
+                    enqueueSnackbar("Manager D.: Worker Drones Deployed",  {variant: "success"});
+                    setTimeout(() => {
+                        enqueueSnackbar("Worker D.: Processing...",  {variant: "info"});
+                        setTimeout(() => {
+                            enqueueSnackbar("Manager D.: Merging Collected Data...",  {variant: "info"});
+                            setTimeout(() => {
+                                enqueueSnackbar("Task Completed Successfully",  {variant: "success"});
+                            }, 3000);
+                        }, 7000);
+                    }, 5000);
+                }, 4000);
+            }, 4000);
+      }
 
-  const handleClick4 = () => () => {
+      const handleClick2 = () => () => {
+        // variant could be success, error, warning, info, or default
+              enqueueSnackbar("Checking Available Manager Drones...",  {variant: "info"});
+              setTimeout(() => {
+                  enqueueSnackbar("Assigning Manager Drones to Subareas...",  {variant: "info"});
+                  setTimeout(() => {
+                      enqueueSnackbar("Manager D.: Worker Drones Deployed",  {variant: "success"});
+                      setTimeout(() => {
+                          enqueueSnackbar("Worker D.: Processing...",  {variant: "info"});
+                          setTimeout(() => {
+                              enqueueSnackbar("Manager[3]: Worker Drone #21f3 crashed...",  {variant: "warning"});
+                              setTimeout(() => {
+                                  enqueueSnackbar("Assigning Replacement Drone to Manager[3]...",  {variant: "info"});
+                                  setTimeout(() => {
+                                      enqueueSnackbar("Manger[3]: Replacement Drone Deployed",  {variant: "success"});
+                                      setTimeout(() => {
+                                          enqueueSnackbar("Deploying Transporter Drone...",  {variant: "info"});
+                                          setTimeout(() => {
+                                              enqueueSnackbar("Transporter Dr.: Damaged Worker Drone Retrieved",  {variant: "success"});
+                                              setTimeout(() => {
+                                                  enqueueSnackbar("Processing...",  {variant: "info"});
+                                                  setTimeout(() => {
+                                                      enqueueSnackbar("Dangerous Weather Conditions Detected...",  {variant: "Warning"});
+                                                      setTimeout(() => {
+                                                          enqueueSnackbar("Task Cancelled...",  {variant: "error"});
+                                                          setTimeout(() => {
+                                                              enqueueSnackbar("Manager Dr.: Ordering Urgent Return to Base...",  {variant: "info"});
+                                                              setTimeout(() => {
+                                                                  enqueueSnackbar("All Drones Landed Successfully!",  {variant: "success"});
+                                                                  setTimeout(() => {
+                                                                      enqueueSnackbar("State Saved...",  {variant: "info"});
+
+                                                                  }, 3000);
+                                                              }, 3000);
+                                                          }, 3000);
+                                                      }, 3000);
+                                                  }, 10000);
+                                              }, 4000);
+                                          }, 4000);
+                                      }, 3000);
+                                  }, 3000);
+                              }, 3000);
+                          }, 3000);
+                      }, 5000);
+                  }, 4000);
+              }, 4000);
+        }
+
+  const handleClick3 = () => () => {
     // variant could be success, error, warning, info, or default
         enqueueSnackbar("Estimating Weather Conditions...", {variant: "info"});
           setTimeout(() => {
@@ -120,7 +166,7 @@ function Snack() {
               }, 2000);
           }, 5000);
     }
-  const handleClick6 = (variant, message) => () => {
+  const handleClick4 = (variant, message) => () => {
     // variant could be success, error, warning, info, or default
           enqueueSnackbar(message,  {variant});
     }
@@ -128,17 +174,20 @@ function Snack() {
     function BRender(props) {
       if (missionChoice === 0) {
         return <Button Disabled onClick={handleClick0("info", "Please Delimit a Location and Choose a Task")
-        }>Submit</Button>
+      }>Launch</Button>
       }
       else if (missionChoice === 1) {
-        return <Button className={clsx(classes.submitButtonEnabled)} onClick={handleClick1()}>Submit</Button>
+        return <Button className={clsx(classes.submitButtonEnabled)} onClick={handleClick1()}>Launch</Button>
+      }
+      else if (missionChoice === 2) {
+        return <Button className={clsx(classes.submitButtonEnabled)} onClick={handleClick2()}>Launch</Button>
+      }
+      else if (missionChoice === 3) {
+        return <Button className={clsx(classes.submitButtonEnabled)} onClick={handleClick3()}>Launch</Button>
       }
       else if (missionChoice === 4) {
-        return <Button className={clsx(classes.submitButtonEnabled)} onClick={handleClick4()}>Submit</Button>
-      }
-      else if (missionChoice === 6) {
-        return <Button className={clsx(classes.submitButtonDisabled)} onClick={handleClick6("error", "No Aquatic Drones Found")
-        }>Submit</Button>
+        return <Button className={clsx(classes.submitButtonDisabled)} onClick={handleClick4("error", "No Aquatic Drones Found")
+        }>Launch</Button>
       }
       return <div></div>
     }
