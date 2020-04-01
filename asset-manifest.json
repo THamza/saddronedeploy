@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/saddronedeploy/static/css/main.fec45a73.chunk.css",
+    "main.js": "/saddronedeploy/static/js/main.645c52c8.chunk.js",
+    "main.js.map": "/saddronedeploy/static/js/main.645c52c8.chunk.js.map",
+    "runtime-main.js": "/saddronedeploy/static/js/runtime-main.0e36e15a.js",
+    "runtime-main.js.map": "/saddronedeploy/static/js/runtime-main.0e36e15a.js.map",
+    "static/css/2.18fb2ca0.chunk.css": "/saddronedeploy/static/css/2.18fb2ca0.chunk.css",
+    "static/js/2.7bd1714e.chunk.js": "/saddronedeploy/static/js/2.7bd1714e.chunk.js",
+    "static/js/2.7bd1714e.chunk.js.map": "/saddronedeploy/static/js/2.7bd1714e.chunk.js.map",
+    "index.html": "/saddronedeploy/index.html",
+    "precache-manifest.ae3adc0a66c53c87d6c76cc851a1a85b.js": "/saddronedeploy/precache-manifest.ae3adc0a66c53c87d6c76cc851a1a85b.js",
+    "service-worker.js": "/saddronedeploy/service-worker.js",
+    "static/css/2.18fb2ca0.chunk.css.map": "/saddronedeploy/static/css/2.18fb2ca0.chunk.css.map",
+    "static/css/main.fec45a73.chunk.css.map": "/saddronedeploy/static/css/main.fec45a73.chunk.css.map",
+    "static/js/2.7bd1714e.chunk.js.LICENSE.txt": "/saddronedeploy/static/js/2.7bd1714e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0e36e15a.js",
+    "static/css/2.18fb2ca0.chunk.css",
+    "static/js/2.7bd1714e.chunk.js",
+    "static/css/main.fec45a73.chunk.css",
+    "static/js/main.645c52c8.chunk.js"
+  ]
+}
