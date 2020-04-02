@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/saddronedeploy/precache-manifest.74949b7997aae36f60d99dc30437e7b4.js"
+  "/saddronedeploy/precache-manifest.06a2708fd2652d99cd820aac0449d2af.js"
 );
 
 self.addEventListener('message', (event) => {
